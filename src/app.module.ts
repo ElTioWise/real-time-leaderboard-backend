@@ -22,6 +22,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
       ],
     }),
   ],
+
   controllers: [AppController],
   providers: [],
 })
