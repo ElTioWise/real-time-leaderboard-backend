@@ -14,6 +14,7 @@ import { JwtStrategy } from '@src/infrastructure/auth/strategies/jwt.strategy';
 import { JwtAuthGuard } from '../guards/jwt-auth.guard';
 import { RolesGuard } from '../guards/roles.guard';
 import { APP_GUARD } from '@nestjs/core';
+import { EncryptService } from '@src/application/services/encrypt.service';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { APP_GUARD } from '@nestjs/core';
 
     // Services
     AuthService,
+    EncryptService,
 
     // Repositories
     {

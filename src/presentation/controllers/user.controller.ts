@@ -23,8 +23,11 @@ import { ListUsersQueryDto } from '../dto/user/list-users-query.dto';
 import { UpdateRoleDto } from '../dto/user/update-role.dto';
 import { PaginatedUsersResponseDto } from '../dto/user/paginated-users-response.dto';
 import { plainToInstance } from 'class-transformer';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @Controller('users')
+@ApiTags('users')
+@ApiBearerAuth()
 @UseGuards(JwtAuthGuard)
 export class UserController {
   constructor(private readonly userService: UserService) {}

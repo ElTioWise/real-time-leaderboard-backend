@@ -4,7 +4,8 @@ import { CONSTANTS } from '@src/shared/constants';
 
 @Injectable()
 export class EncryptService {
-  constructor(private readonly saltRounds: number) {
+  private readonly saltRounds: number;
+  constructor() {
     this.saltRounds = CONSTANTS.BCRYPT_SALT_ROUNDS;
   }
   async hashPassword(password: string): Promise<string> {

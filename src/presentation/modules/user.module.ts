@@ -14,6 +14,7 @@ import { UpdateUserRoleUseCase } from '@src/application/use-cases/user/update-us
 import { ActivateUserUseCase } from '@src/application/use-cases/user/activate-user.use-case';
 import { DeactivateUserUseCase } from '@src/application/use-cases/user/deactivate-user.use-case';
 import { DeleteUserUseCase } from '@src/application/use-cases/user/delete-user.use-case';
+import { EncryptService } from '@src/application/services/encrypt.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User])],
@@ -24,6 +25,7 @@ import { DeleteUserUseCase } from '@src/application/use-cases/user/delete-user.u
       provide: USER_REPOSITORY,
       useClass: UserRepository,
     },
+    EncryptService,
     // User Use Cases
     GetProfileUseCase,
     GetUserByIdUseCase,

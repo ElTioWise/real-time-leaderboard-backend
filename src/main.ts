@@ -43,15 +43,11 @@ async function bootstrap() {
   // Swagger Documentation
   if (configService.get('NODE_ENV') !== 'production') {
     const config = new DocumentBuilder()
-      .setTitle('BookHub API')
-      .setDescription('API for BookHub - Book Management Application')
+      .setTitle('Leaderboard API')
+      .setDescription('API for Leaderboard')
       .setVersion('1.0')
       .addTag('auth', 'Authentication endpoints')
       .addTag('users', 'User management')
-      .addTag('books', 'Book catalog')
-      .addTag('lists', 'Reading lists')
-      .addTag('reviews', 'Book reviews and ratings')
-      .addTag('social', 'Social features')
       .addTag('admin', 'Admin endpoints')
       .addBearerAuth()
       .build();
